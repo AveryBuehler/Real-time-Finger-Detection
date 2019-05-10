@@ -16,16 +16,20 @@
 
 ## Table of Contents
 - [Background](#background)
-- [Project Description](#project-description)
+- [Requirements](#requirements)
 - [Features](#features)
 - [C Code Samples](#c-code-samples)
 - [Future Improvements](#future-improvements)
 
 ## Background
-  <sub><a href="https://en.wikipedia.org/wiki/Caesar_cipher" target="_blank">Information obtained from Wikipedia</a></sub>
-  >"The Caesar cipher is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of `3`, `D` would be replaced by `A`, `E` would become `B`, and so on. The method is named after Julius Caesar, who used it in his private correspondence."
+The purpose of this project was to create a real-time finger detection program using Python and OpenCV. To accomplish this, we made use of **convex hulls** - a convex closure of a set *X* of points in a Euclidean space that is the smallest convex set that contains *X*. 
+
+The image below shows a high-level example of how convex hulls work. For our project, the convex hull was used to segment the hand and find the fingers by looking into extremities which touches the edge of the convex hull.
+<div align="center">
+  <img src="https://miro.medium.com/max/1354/1*F4IUmOJbbLMJiTgHxpoc7Q.png" alt="Convex hull example">
+</div>
   
-## Project Description
+## Requirements
 <sub>Information from CS455 - System Programming</sub>
 1. Write a program that encrypts a message using a Caesar cipher. The user will enter the plaintext (message to be encrypted) and the shift amount:
 
