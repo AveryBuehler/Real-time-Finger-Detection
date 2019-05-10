@@ -31,15 +31,17 @@ The image below shows a high-level example of how convex hulls work. For our pro
   
 ## Requirements
 1. [Anaconda 2019.03](https://www.anaconda.com/distribution/) (Python 3.7 version)
-2. OpenCV  
+2. [OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html)  
 	```conda install -c conda-forge opencv```
-3. imutils   
+3. [imutils](https://github.com/jrosebr1/imutils)   
 	```conda install -c pjamesjoyce imutils```
 ## Features
 - **Finger derection** in real-time by using a webcam
 - **Visually displays** various interesting aspects (palm center, extremities, etc.)
 - In-depth use of **OpenCV**
-- **Error handling**
+- **Region of interest** (ROI) detection
+- **Finger-frame summation** to account for errors
+- **Skin detection** by using a weighted background algorithm
 
 ## C Code Samples
 
