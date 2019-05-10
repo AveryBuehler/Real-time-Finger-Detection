@@ -18,7 +18,7 @@
 - [Background](#background)
 - [Requirements](#requirements)
 - [Features](#features)
-- [C Code Samples](#c-code-samples)
+- [Python Code Samples](#c-code-samples)
 - [Future Improvements](#future-improvements)
 
 ## Background
@@ -31,12 +31,14 @@ The image below shows a high-level example of how convex hulls work. For our pro
   
 ## Requirements
 1. [Anaconda 2019.03](https://www.anaconda.com/distribution/) (Python 3.7 version)
-2. imutils   
-	```pip install imutils```
+2. OpenCV  
+	```conda install -c conda-forge opencv```
+3. imutils   
+	```conda install -c pjamesjoyce imutils```
 ## Features
-- **Dynamic memory allocation** based on file size and plaintext
-- **Cross-platform** between Windows and Linux for printing the working directory
-- Wide use of **pointers**
+- **Finger derection** in real-time by using a webcam
+- **Visually displays** various interesting aspects (palm center, extremities, etc.)
+- In-depth use of **OpenCV**
 - **Error handling**
 
 ## C Code Samples
