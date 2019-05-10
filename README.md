@@ -26,9 +26,15 @@ This is a real-time finger detector using Python and OpenCV. When you place your
 
 The program works by first getting the webcam and resizing it so the program may run with any webcam (larger than 700x700 pixels). Once this is done, a ROI is drawn over the screen to display to the user of the program where they should hold their hand up. The program will then convert each frame to grayscale and blur the ROI. 
 
-Next, the program works to detect whether a hand is in the ROI or not. It accomplishes this by taking a weighted average of the background in the ROI and finding similarities. Once a difference enters the ROI (such as a hand), the program will begin since it has detected the hand and now knows what the hand is in regards to the background. 
+Next, the program works to detect whether a hand is in the ROI or not. It accomplishes this by taking a weighted average of the background in the ROI and finding similarities. Once a difference enters the ROI (such as a hand), the program will begin since it has detected the hand and now knows what the hand is in regards to the background. An example of how the ROI works on the webcam is seen below.
+<div align="center">
+  <img src="https://scc.ustc.edu.cn/zlsc/tc4600/intel/2015.1.133/ipp/ipp_manual/GUID-D0340CB0-7050-4627-BB90-21E6433E7B8F-low.jpg" alt="ROI example">
+</div>
 
-Next, the program will segment the hand ROI so as to not use the entire webcam frame for detection. It accomplishes this by taking a screenshot of the ROI and finding the difference between the background and what is currently in the ROI. Next, it will threshold that difference and get the contours from that threshold. It will remove any redundant points (to save memory) and compresses the contour before taking the maximum contour (the hand). It will return the hand contour to be further processed.
+Next, the program will segment the hand ROI so as to not use the entire webcam frame for detection. It accomplishes this by taking a screenshot of the ROI and finding the difference between the background and what is currently in the ROI. Next, it will threshold that difference and get the contours from that threshold. It will remove any redundant points (to save memory) and compresses the contour before taking the maximum contour (the hand). It will return the hand contour to be further processed. A high-level example of thresholding can be seen below.
+<div align="center">
+  <img src="https://docs.opencv.org/3.4/ada_threshold.jpg" alt="Thresholding example">
+</div>
 
 Afterward, the hand contour gets sent to another method which gets the convex hull of the hand. The convex hull is used to segment the hand by looking for extremities. A high-level example of how these work can be seen below. 
 <div align="center">
