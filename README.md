@@ -47,7 +47,7 @@ The image below shows a high-level example of how convex hulls work. For our pro
 All code for this project resides in a single Jupyter notebook.  
 
 There are four functions:
-### Finding the background
+### 1. Finding the background
 ```python
 def findBackgroundMatrix(img, weight):
     global background_start
@@ -62,7 +62,7 @@ def findBackgroundMatrix(img, weight):
     cv2.imshow("Background", img)
 ```
 
-### Finding the hand
+### 2. Finding the hand
 ```python
 def findHand(img, threshold=25):
     global background_start
@@ -91,7 +91,7 @@ def findHand(img, threshold=25):
         return (threshold_img, segmentedHand)
 ```
 
-### Getting the number of fingers
+### 3. Getting the number of fingers
 ```python
 def getFingers(threshold_img, segmentedHand):
     
@@ -161,7 +161,7 @@ def getFingers(threshold_img, segmentedHand):
     return num_fingers
 ```
 
-### Main function
+### 4. The main function
 ```python
 if __name__ == "__main__":
     
@@ -278,8 +278,10 @@ cv2.destroyAllWindows()
 ```
 
 ## Future Improvements
-- [ ] Add compatability with all operating systems
-- [ ] Add a GUI with C++
+- [ ] Better detect skin with various methods
+- [ ] Train a CNN to detect fingers and compare results
+- [ ] Use SIFT/SURF instead of a convex hull
+- [ ] Gesture recognition
 
 ## License
 [MIT](https://tldrlegal.com/license/mit-license)
