@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>✌ Real-time Finger Detection With Python and OpenCV </h1>
+  <h1>Real-time Finger Detection With Python and OpenCV </h1>
 </div>
 
 <div align="center">
