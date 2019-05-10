@@ -1,17 +1,17 @@
 <div align="center">
-  <h1>Real-time Finger Detection With Python and OpenCV </h1>
+  <h1>Real-time Finger Detection</h1>
 </div>
 
 <div align="center">
-  <strong>An implementation of the Caesar cipher written entirely in C</strong>
+  <strong>Written entirely in Python using OpenCV</strong>
 </div>  
 
 <div align="center">
-  <img src="https://cdncontribute.geeksforgeeks.org/wp-content/uploads/ceaserCipher.png" alt="Caesar cipher example">
+  <img src="https://media.giphy.com/media/XeMmEZSzLK0mLwzhPG/giphy.gif" alt="Real-time finger detection example">
 </div>
   
 <div align="center">  
-  <sub>Made for CS455 - System Programming</sub>
+  <sub>Made for CS390 - Machine Perception</sub>
 </div>
 
 ## Table of Contents
