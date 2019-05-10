@@ -31,7 +31,7 @@ The image below shows a high-level example of how convex hulls work. For our pro
   
 ## Requirements
 1. [Anaconda 2019.03](https://www.anaconda.com/distribution/) (Python 3.7 version)
-2. imutils
+2. imutils   
 	```pip install imutils```
 ## Features
 - **Dynamic memory allocation** based on file size and plaintext
