@@ -22,13 +22,20 @@
 - [Future Improvements](#future-improvements)
 
 ## Background
-The purpose of this project was to create a real-time finger detection program using Python and OpenCV. To accomplish this, we made use of **convex hulls** - a convex closure of a set *X* of points in a Euclidean space that is the smallest convex set that contains *X*. 
+This is a real-time finger detector using Python and OpenCV. When you place your hand over the region of interest (ROI) on screen, the program will automatically detect the number of fingers you're holding up. In the above GIF, the number in the top left represents the real-time finger count, while the number on the top-right represents the average over a period of 250 frames (seen iterating in the bottom left). 
 
-The image below shows a high-level example of how convex hulls work. For our project, the convex hull was used to segment the hand and find the fingers by looking into extremities which touches the edge of the convex hull.
+The program works by first getting the webcam and resizing it so the program may run with any webcam (larger than 700x700 pixels). Once this is done, a ROI is drawn over the screen to display to the user of the program where they should hold their hand up. The program will then convert each frame to grayscale and blur the ROI. 
+
+Next, the program works to detect whether a hand is in the ROI or not. It accomplishes this by taking a weighted average of the background in the ROI and finding similarities. Once a difference enters the ROI (such as a hand), the program will begin since it has detected the hand and now knows what the hand is in regards to the background. 
+
+Next, the program will segment the hand ROI so as to not use the entire webcam frame for detection. It accomplishes this by taking a screenshot of the ROI and finding the difference between the background and what is currently in the ROI. Next, it will threshold that difference and get the contours from that threshold. It will remove any redundant points (to save memory) and compresses the contour before taking the maximum contour (the hand). It will return the hand contour to be further processed.
+
+Afterward, the hand contour gets sent to another method which gets the convex hull of the hand. The convex hull is used to segment the hand by looking for extremities. A high-level example of how these work can be seen below. 
 <div align="center">
   <img src="https://miro.medium.com/max/1354/1*F4IUmOJbbLMJiTgHxpoc7Q.png" alt="Convex hull example">
 </div>
-  
+We then find the extreme points of the convex hull and use those to find the center of the hull (i.e., the center of the palm). The Euclidean distance is then calculated between the center of the palm and the extreme points. The maximum Euclidean distance is used to calculate the radius of the palm and then the circumference, which is then used to get the hand's ROI (a circlular bounding "box" around the hand). These distances, after being contoured, are then compared with a threshold value to see if they are long enough to be considered a finger. If they are, it will count it; if not, it will disregard it.
+
 ## Requirements
 1. [Anaconda 2019.03](https://www.anaconda.com/distribution/) (Python 3.7 version)
 2. [OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html)  
